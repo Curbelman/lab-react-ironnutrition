@@ -1,19 +1,19 @@
 import './App.css';
 import foods from "./foods.json";
 import { useState } from 'react';
+import FoodBox from './components/foodBox';
 
 
 function App() { 
-  const [foodArray, setFoodArray] = useState(foods);
+  const [foodArray] = useState(foods);
 
   return (
     <div className="App">
-    {foodArray.map((eachFood, i) => {
+    {foodArray.map((food, i) => {
       return (
         <div>
-        <p> {eachFood.name} </p>
-        <img src={eachFood.image} alt={eachFood.name} width="200px" />
-      </div>
+          <FoodBox food={food} />
+        </div>
       );
     })}
     </div>
