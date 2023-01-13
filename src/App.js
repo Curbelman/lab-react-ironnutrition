@@ -15,6 +15,18 @@ function App() {
     return food.name.toLowerCase().includes(filterTerm.toLowerCase());
   })
 
+  // const deleteFood = (deletedFood) => {
+  //   const reducedFoods = foodArrayCopy.filter((foodItem) => {
+  //     return foodItem.name !== deletedFood;
+  //   });
+  // }
+
+  // function deleteFood(deletedFood) {
+  //   filteredFoods = foodArray.filter((foodItem) => {
+  //     return foodItem.name !== deletedFood;
+  //   });
+  // }
+
   return (
     <div className="App">
 
@@ -25,7 +37,7 @@ function App() {
     {filteredFoods.map((food, i) => {
       return (
         <div>
-          <FoodBox food={food} />
+          <FoodBox food={food} foodArray={foodArray} setFoodArray={setFoodArray} />
         </div>
       );
     })}
